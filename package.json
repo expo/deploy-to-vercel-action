@@ -2,13 +2,12 @@
   "name": "deploy-to-vercel-action",
   "version": "2.0.0",
   "description": "Deploy your project to Vercel using GitHub Actions. Supports PR previews and GitHub deployments.",
-  "type": "module",
   "main": "dist/index.js",
   "scripts": {
     "lint": "eslint ./src",
     "dev": "node src/index.js",
     "start": "node dist/index.js",
-    "build": "esbuild src/index.js --bundle --platform=node --target=node24 --format=esm --outfile=dist/index.js"
+    "build": "esbuild src/index.js --bundle --platform=node --target=node24 --format=cjs --conditions=import --outfile=dist/index.js"
   },
   "repository": {
     "type": "git",
