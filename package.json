@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "esbuild": "^0.28.0",
-    "eslint": "^8.0.0"
+    "eslint": "^10.2.0"
   },
   "engines": {
     "node": ">=22"
