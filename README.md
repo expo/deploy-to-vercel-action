@@ -33,7 +33,7 @@ Then create a `.yml` file in your `.github/workflows` folder (you can find more 
 name: Deploy CI
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -176,7 +176,7 @@ Here's a complete workflow as an example:
 name: Deploy CI
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request_target:
     types: [opened, synchronize, reopened]
 jobs:
@@ -216,7 +216,7 @@ Here are a few examples to help you get started!
 
 ### Basic Example
 
-The workflow below will run on every push to master and every time a new PR is created or an existing PR changed. [deploy-to-vercel-action](https://github.com/expo/deploy-to-vercel-action) will deploy the master branch to your Vercel production environment and comment on every PR with a preview link to the deployed PR.
+The workflow below will run on every push to master and every time a new PR is created or an existing PR changed. [deploy-to-vercel-action](https://github.com/expo/deploy-to-vercel-action) will deploy the main branch to your Vercel production environment and comment on every PR with a preview link to the deployed PR.
 
 **.github/workflows/deploy.yml**
 
@@ -224,7 +224,7 @@ The workflow below will run on every push to master and every time a new PR is c
 name: Deploy CI
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -308,7 +308,7 @@ If you want, [deploy-to-vercel-action](https://github.com/expo/deploy-to-vercel-
 name: Deploy CI
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -341,7 +341,7 @@ The workflow below will wait until your other CI jobs are completed until it wil
 name: Deploy CI
 on:
   push:
-    branches: [master]
+    branches: [main]
 jobs:
   build:
     # Your build job (can be anything you want)
@@ -374,7 +374,7 @@ The workflow below will not automatically create a PR comment. This is useful fo
 name: Deploy CI
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -456,7 +456,7 @@ To overcome this limitation you can use the `pull_request_target` event and chec
 name: Deploy CI
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request_target:
     types: [opened, synchronize, reopened]
 jobs:
@@ -497,7 +497,7 @@ You can define the build environment variables when using the action:
 name: Deploy CI
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:

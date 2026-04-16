@@ -24447,8 +24447,8 @@ var setDynamicVars = () => {
     context3.SHA = process.env.SHA || "XXXXXXX";
     context3.IS_PR = process.env.IS_PR === "true" || false;
     context3.PR_NUMBER = process.env.PR_NUMBER || void 0;
-    context3.REF = process.env.REF || "refs/heads/master";
-    context3.BRANCH = process.env.BRANCH || "master";
+    context3.REF = process.env.REF || "refs/heads/main";
+    context3.BRANCH = process.env.BRANCH || "main";
     context3.PRODUCTION = process.env.PRODUCTION === "true" || !context3.IS_PR;
     context3.LOG_URL = process.env.LOG_URL || `https://github.com/${context3.USER}/${context3.REPOSITORY}`;
     context3.ACTOR = process.env.ACTOR || context3.USER;
