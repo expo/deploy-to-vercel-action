@@ -1,8 +1,10 @@
-const core = require('@actions/core')
-const Github = require('./github')
-const Vercel = require('./vercel')
-const { addSchema } = require('./helpers')
-const crypto = require('crypto')
+import * as core from '@actions/core'
+import * as Github from './github.js'
+import * as Vercel from './vercel.js'
+import { addSchema } from './helpers.js'
+import crypto from 'crypto'
+
+import config from './config.js'
 
 const {
 	GITHUB_DEPLOYMENT,
@@ -22,7 +24,7 @@ const {
 	DEPLOY_PR_FROM_FORK,
 	IS_FORK,
 	ACTOR
-} = require('./config')
+} = config
 
 // Following https://perishablepress.com/stop-using-unsafe-characters-in-urls/ only allow characters that won't break the URL.
 const urlSafeParameter = (input) => input.replace(/[^a-z0-9_~]/gi, '-')
@@ -36,7 +38,7 @@ const run = async () => {
 		const body = `
 			Refusing to deploy this Pull Request to Vercel because it originates from @${ ACTOR }'s fork.
 
-			**@${ USER }** To allow this behaviour set \`DEPLOY_PR_FROM_FORK\` to true ([more info](https://github.com/BetaHuhn/deploy-to-vercel-action#deploying-a-pr-made-from-a-fork-or-dependabot)).
+			**@${ USER }** To allow this behaviour set \`DEPLOY_PR_FROM_FORK\` to true ([more info](https://github.com/expo/deploy-to-vercel-action#deploying-a-pr-made-from-a-fork-or-dependabot)).
 		`
 
 		const comment = await github.createComment(body)

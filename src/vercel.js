@@ -1,6 +1,7 @@
-const core = require('@actions/core')
-const got = require('got')
-const { exec, removeSchema } = require('./helpers')
+import * as core from '@actions/core'
+import { exec, removeSchema } from './helpers.js'
+
+import config from './config.js'
 
 const {
 	VERCEL_TOKEN,
@@ -17,7 +18,7 @@ const {
 	PREBUILT,
 	WORKING_DIRECTORY,
 	FORCE
-} = require('./config')
+} = config
 
 const init = () => {
 	core.info('Setting environment variables for Vercel CLI')
@@ -101,9 +102,13 @@ const init = () => {
 			}
 		}
 
-		const res = await got(url, options).json()
+		const res = await fetch(url, options)
 
-		return res
+		if (!res.ok) {
+			throw new Error(`Vercel API request failed with status ${ res.status }`)
+		}
+
+		return res.json()
 	}
 
 	return {
@@ -114,6 +119,4 @@ const init = () => {
 	}
 }
 
-module.exports = {
-	init
-}
+export { init }

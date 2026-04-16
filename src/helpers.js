@@ -1,5 +1,5 @@
-const core = require('@actions/core')
-const { spawn } = require('child_process')
+import * as core from '@actions/core'
+import { spawn } from 'child_process'
 
 const execCmd = (command, args, cwd) => {
 	core.debug(`EXEC: "${ command } ${ args }" in ${ cwd || '.' }`)
@@ -42,8 +42,8 @@ const removeSchema = (url) => {
 	return url.replace(regex, '')
 }
 
-module.exports = {
-	exec: execCmd,
+export {
+	execCmd as exec,
 	addSchema,
 	removeSchema
 }

@@ -1,11 +1,11 @@
 blank_issues_enabled: false
 contact_links:
-  - name: 📚 Docs
-    url: https://github.com/BetaHuhn/deploy-to-vercel-action#-usage
+  - name: Docs
+    url: https://github.com/expo/deploy-to-vercel-action#usage
     about: Checkout the documentation.
-  - name: 🚀 Feature Request
-    url: https://github.com/BetaHuhn/deploy-to-vercel-action/discussions/new?category=ideas
+  - name: Feature Request
+    url: https://github.com/expo/deploy-to-vercel-action/discussions/new?category=ideas
     about: Share ideas for new features
-  - name: ❓ Ask a Question
-    url: https://github.com/BetaHuhn/deploy-to-vercel-action/discussions/new?category=q-a
+  - name: Ask a Question
+    url: https://github.com/expo/deploy-to-vercel-action/discussions/new?category=q-a
     about: Ask the community for help

@@ -1,7 +1,7 @@
-const core = require('@actions/core')
-const github = require('@actions/github')
-const parser = require('action-input-parser')
-require('dotenv').config()
+import * as core from '@actions/core'
+import * as github from '@actions/github'
+import * as parser from 'action-input-parser'
+import 'dotenv/config'
 
 const IS_PR = [ 'pull_request', 'pull_request_target' ].includes(github.context.eventName)
 
@@ -153,4 +153,4 @@ core.debug(
 	)
 )
 
-module.exports = context
+export default context
