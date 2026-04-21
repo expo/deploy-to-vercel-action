@@ -20,7 +20,7 @@
     "url": "https://github.com/expo/deploy-to-vercel-action/issues"
   },
   "dependencies": {
-    "@actions/core": "^3.0.0",
+    "@actions/core": "^3.0.1",
     "@actions/github": "^9.0.0",
     "action-input-parser": "^1.2.38",
     "dotenv": "^16.0.0"
